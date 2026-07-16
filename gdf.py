@@ -59,7 +59,7 @@ if not args.RHOST:
     sys.exit(1)
 
 
-logging.basicConfig(format="\033[48;5;6m[%(asctime)s] %(message)s", datefmt="%H:%M:%S", level=(logging.DEBUG if args.verbose else logging.INFO))
+logging.basicConfig(format="\033[38;5;39m[%(asctime)s] %(message)s", datefmt="%H:%M:%S", level=(logging.DEBUG if args.verbose else logging.INFO))
 
 user_agents = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36",
